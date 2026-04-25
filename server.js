@@ -1,3 +1,6 @@
+require('dotenv').config();
+const dns = require('dns');
+dns.setServers(['8.8.8.8']);
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
@@ -11,8 +14,10 @@ const PORT = process.env.PORT || 3000;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (MONGODB_URI) {
-    mongoose.connect(MONGODB_URI)
-        .then(() => console.log('Connected to MongoDB Atlas'))
+    mongoose.connect(MONGODB_URI, {
+        family: 4 // Force IPv4 to avoid some common DNS/ECONNREFUSED issues
+    })
+        .then(() => console.log('Connected to MongoDB Atlas: sharyx_webinar'))
         .catch(err => console.error('MongoDB connection error:', err));
 } else {
     console.warn('WARNING: MONGODB_URI not found. Registrations will NOT be saved.');
@@ -29,7 +34,7 @@ const registrationSchema = new mongoose.Schema({
     webinarDate: String
 });
 
-const Registration = mongoose.model('Registration', registrationSchema);
+const Registration = mongoose.model('Registration', registrationSchema, 'sharyx_webinar');
 
 app.use(cors());
 app.use(bodyParser.json());
