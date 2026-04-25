@@ -460,39 +460,131 @@
       border-top: 1px solid var(--border);
     }
 
+    @media (max-width: 1024px) {
+      .gradient-heading {
+        right: 0;
+        bottom: 0;
+        text-align: center;
+        font-size: 2.8rem;
+      }
+      .section-img-container img {
+        bottom: 0;
+        right: 0;
+      }
+      .section-content-side {
+        transform: translate(0, 0);
+      }
+    }
+
     @media (max-width: 968px) {
+      .navbar {
+        padding: 1rem;
+        border-radius: 100px;
+        justify-content: center;
+        margin-top: 0.5rem;
+        top: 0.5rem;
+      }
+      .nav-links {
+        display: none; /* Hide links on mobile for simplicity */
+      }
+      .logo img {
+        height: 40px;
+      }
       .hero {
         flex-direction: column;
         text-align: center;
-        padding-top: 4rem;
+        padding-top: 2rem;
+        gap: 3rem;
       }
-
-      .hero h1 {
-        font-size: 3rem;
+      .hero h1,
+      .section-title,
+      .founder-name,
+      .gradient-heading,
+      .who-attend .section-title {
+        font-size: 1.6rem !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.01em !important;
       }
-
+      .text-gradient {
+        font-size: 1.7rem !important; /* Slightly larger for emphasis, but still balanced */
+      }
       .hero p {
-        margin: 0 auto 2.5rem;
+        margin: 0 auto 2rem;
+        font-size: 1.05rem;
       }
-
+      .hero-form-card {
+        padding: 1.5rem;
+        width: 100%;
+      }
       .learn-grid {
         grid-template-columns: 1fr;
       }
-
       .dual-col-section {
         flex-direction: column !important;
-        gap: 2rem;
         text-align: center;
+        margin: 2rem 0 4rem;
       }
-
-      .section-img-container {
+      .dual-col-section .section-img-container {
+        display: none; /* Removed image on mobile as requested */
+      }
+      .dual-col-section .section-content-side {
         width: 100%;
-        max-width: 500px;
-        margin: 0 auto;
+        transform: none;
       }
-
+      .dual-col-section .gradient-heading {
+        right: 0;
+        bottom: 0;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        font-size: 2.2rem;
+        width: 100%;
+      }
       .learn-grid-side {
         grid-template-columns: 1fr !important;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .learn-card-small {
+        text-align: center;
+      }
+      .testi-card {
+        min-width: 300px;
+        max-width: 320px;
+        padding: 1.5rem;
+      }
+      .founder-name {
+        font-size: 2.5rem;
+      }
+      .founder-section {
+        padding: 3rem 1.5rem;
+        border-radius: 2rem;
+      }
+      .founder-bio {
+        font-size: 1.1rem;
+      }
+      .founder-signature {
+        min-width: auto;
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .text-gradient {
+        font-size: 2.5rem;
+      }
+      .gradient-heading {
+        font-size: 2rem;
+      }
+      .time-number {
+        font-size: 1.25rem;
+        min-width: 45px;
+      }
+      .countdown-timer {
+        gap: 0.5rem;
       }
     }
 
@@ -1086,8 +1178,7 @@
     <div style="margin: 8rem 0 4rem;" id="founder">
       <div class="founder-section" data-reveal>
         <div class="founder-content">
-          <span class="founder-tag">About the Founder</span>
-          <h2 class="founder-name">Sathish Kumar</h2>
+          <h2 class="founder-name">Meet Sathish Kumar</h2>
           <div class="founder-title">
             <span>Specialist in Digital Transformation & AI Solutions</span>
           </div>
