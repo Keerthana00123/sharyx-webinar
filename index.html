@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>AI Voice Agent Webinar · Scale Sales Operations | Sharyx</title>
+  <meta name="description"
+    content="Join our free live webinar to learn how AI Voice Agents can close more sales, generate high-intent leads, reduce costs, and deliver 24/7 support. Register your slot now!">
+  <!-- Google Fonts + modern reset -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      /* Palette */
+      --primary: hsl(265, 100%, 68%);
+      --primary-dark: hsl(265, 80%, 55%);
+      --accent: hsl(315, 75%, 53%);
+      --bg: hsl(48, 100%, 98%);
+      --text-main: hsl(222, 47%, 11%);
+      --text-muted: hsl(215, 16%, 47%);
+      --surface: hsla(0, 0%, 100%, 0.7);
+      --border: hsla(220, 13%, 91%, 0.8);
+      --radius: 1.5rem;
+      --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 5px 15px -8px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Professional Background Gradient Mesh */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 10% 20%, hsla(265, 100%, 68%, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, hsla(315, 75%, 53%, 0.03) 0%, transparent 40%);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Reveal Animation Utility */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    [data-reveal].reveal-active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Glass Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+      position: sticky;
+      top: 1rem;
+      z-index: 1000;
+      background: var(--surface);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      margin-top: 1rem;
+      transition: all 0.3s;
+      box-shadow: var(--shadow);
+    }
+
+    .logo img {
+      height: 62px;
+      width: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .logo:hover img {
+      transform: scale(1.05);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-main);
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:not(.btn-outline-nav):hover {
+      color: var(--primary);
+    }
+
+    .btn-outline-nav {
+      border: 1.5px solid var(--accent);
+      padding: 0.6rem 1.4rem;
+      border-radius: 50px;
+      color: var(--accent) !important;
+      font-weight: 600;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .btn-outline-nav:hover {
+      background: var(--accent);
+      color: white !important;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px hsla(315, 75%, 53%, 0.2);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 6rem 0 4rem;
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      min-height: 80vh;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .webinar-badge {
+      background: hsla(265, 100%, 68%, 0.1);
+      color: var(--primary);
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      border: 1px solid hsla(265, 100%, 68%, 0.1);
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.03em;
+    }
+
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      margin-bottom: 2.5rem;
+      max-width: 540px;
+    }
+
+    /* Premium Glass Form Card */
+    .hero-form-card {
+      flex: 0.85;
+      background: white;
+      border-radius: 2.5rem;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08);
+      position: relative;
+    }
+
+    .hero-form-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      z-index: -1;
+      border-radius: 2.5rem;
+      opacity: 0.1;
+    }
+
+    .form-title {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-sub {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .input-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .input-group input,
+    .input-group select {
+      width: 100%;
+      padding: 1rem 1.25rem;
+      border-radius: 1rem;
+      border: 1.5px solid var(--border);
+      font-family: inherit;
+      font-size: 1rem;
+      transition: all 0.3s;
+      background: hsl(210, 40%, 99%);
+    }
+
+    .input-group input:focus,
+    .input-group select:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 4px hsla(265, 100%, 68%, 0.1);
+    }
+
+    .countdown-box {
+      background: hsl(220, 33%, 98%);
+      padding: 1.25rem;
+      border-radius: 1.25rem;
+      margin: 1.5rem 0;
+      border: 1px solid var(--border);
+    }
+
+    .countdown-timer {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+
+    .time-number {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text-main);
+      background: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 0.75rem;
+      min-width: 60px;
+      display: inline-block;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .register-btn {
+      width: 100%;
+      background: var(--text-main);
+      color: white;
+      border: none;
+      padding: 1.1rem;
+      border-radius: 1rem;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .register-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px hsla(265, 80%, 55%, 0.2);
+    }
+
+    /* Bento Grid for points */
+    .learn-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .learn-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 2rem;
+      border: 1px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .learn-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--primary);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+    }
+
+    .learn-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      height: 60px;
+      width: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: hsla(265, 100%, 68%, 0.05);
+      border-radius: 1rem;
+    }
+
+    .section-title {
+      font-size: 3rem;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 4rem;
+      letter-spacing: -0.02em;
+    }
+
+    /* Premium Testimonials */
+    .testi-card {
+      background: white;
+      border-radius: 2rem;
+      padding: 2.5rem;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .testi-text {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-main);
+      margin-bottom: 1.5rem;
+      font-style: italic;
+    }
+
+    /* FAQ Premium Animation Styles */
+    .faq-item {
+      background: white;
+      border-radius: 1.25rem;
+      margin-bottom: 1rem;
+      border: 1.5px solid var(--border);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .faq-item.active {
+      border-color: var(--primary);
+      box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.05);
+      background: white;
+    }
+
+    .faq-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto 6rem;
+      z-index: 1;
+    }
+
+    .faq-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150%;
+      height: 150%;
+      background: radial-gradient(circle, hsla(265, 100%, 68%, 0.07) 0%, transparent 70%);
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(40px);
+    }
+
+    /* Staggered Reveal Animation */
+    .faq-item[data-reveal].reveal-active {
+      transition-delay: calc(var(--reveal-delay, 0) * 0.15s);
+    }
+
+    .faq-question {
+      padding: 1.5rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background 0.3s;
+    }
+
+    .faq-question:hover {
+      background: hsla(265, 100%, 68%, 0.02);
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--primary);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-block;
+      line-height: 1;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(45deg);
+    }
+
+    .faq-content {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item.active .faq-content {
+      grid-template-rows: 1fr;
+    }
+
+    .faq-answer {
+      overflow: hidden;
+      padding: 0 1.5rem;
+      color: var(--text-muted);
+      font-size: 1rem;
+      line-height: 1.7;
+      transition: padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item.active .faq-answer {
+      padding-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      padding: 6rem 0 3rem;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (max-width: 968px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 4rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero p {
+        margin: 0 auto 2.5rem;
+      }
+
+      .learn-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dual-col-section {
+        flex-direction: column !important;
+        gap: 2rem;
+        text-align: center;
+      }
+
+      .section-img-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .learn-grid-side {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* New Dual Column Utility */
+    .dual-col-section {
+      display: flex;
+      gap: 0;
+      /* Gap removed as requested */
+      align-items: center;
+      margin: 4rem 0 8rem;
+    }
+
+    .gradient-heading {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      position: relative;
+      right: 80px;
+      bottom: 50px;
+    }
+
+    .text-gradient {
+      font-size: 4rem;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      display: inline-block;
+    }
+
+    .highlight-pill {
+      background: hsla(265, 100%, 68%, 0.1);
+      color: var(--primary);
+      padding: 0.2rem 1.2rem;
+      border-radius: 100px;
+      font-size: 0.8em;
+      vertical-align: middle;
+      border: 1px solid hsla(265, 100%, 68%, 0.2);
+    }
+
+    .dual-col-section1 {
+      display: flex;
+      gap: 4rem;
+      /* Gap removed as requested */
+      align-items: center;
+      margin: 4rem 0 8rem;
+    }
+
+    .section-img-container {
+      flex: 1.5;
+      /* Increased size for image */
+      position: relative;
+    }
+
+    .section-img-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 2.5rem;
+      transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
+      position: relative;
+      z-index: 2;
+      bottom: 100px;
+      right: 100px;
+      /* Adjust top and right to fine-tune the image position */
+    }
+
+    .section-img-container img:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    /* Soft backlight effect */
+
+    .section-content-side {
+      flex: 1;
+      transform: translate(-100px, -40px);
+      /* Adjusted top and left as requested */
+      /* Narrower content area to balance larger image */
+    }
+
+    .learn-grid-side {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .learn-card-small {
+      background: white;
+      padding: 1rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+
+    .learn-card-small:hover {
+      border-color: var(--primary);
+      transform: translateY(-4px);
+    }
+
+    .learn-card-small h3 {
+      font-size: 1.25rem;
+      /* Fixed typo from 2srem */
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-scroller {
+      overflow: hidden;
+      padding: 2rem 0;
+      position: relative;
+      width: 100%;
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+
+    .testimonial-track {
+      display: flex;
+      gap: 2rem;
+      width: max-content;
+      animation: scroll 40s linear infinite;
+    }
+
+    .testimonial-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(calc(-50% - 1rem));
+      }
+    }
+
+    .testi-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      border: 1px solid var(--border);
+      min-width: 500px;
+      max-width: 600px;
+      flex-shrink: 0;
+      transition: all 0.3s ease;
+      box-shadow:
+        0 10px 30px -10px rgba(0, 0, 0, 0.05),
+        inset 0 0 15px rgba(0, 0, 0, 0.03);
+      /* Added inner shade */
+    }
+
+    .testi-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+    }
+
+    .stars {
+      color: #ffb800;
+      /* Gold color for stars */
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 2px;
+    }
+
+    .client-name {
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 0.25rem;
+    }
+
+    .client-title {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    /* Founder Section Styles (No Photo) */
+    .founder-section {
+      background: white;
+      border-radius: 3rem;
+      padding: 5rem 4rem;
+      border: 1px solid var(--border);
+      max-width: 1000px;
+      margin: 4rem auto 8rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .founder-section::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      height: 200%;
+      background: radial-gradient(circle, hsla(265, 100%, 68%, 0.05) 0%, transparent 70%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .founder-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .founder-tag {
+      display: inline-block;
+      padding: 0.5rem 1.25rem;
+      background: hsla(265, 100%, 68%, 0.1);
+      color: var(--primary);
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      border: 1px solid hsla(265, 100%, 68%, 0.2);
+    }
+
+    .founder-name {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .founder-title {
+      font-size: 1.4rem;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .founder-bio {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin-bottom: 3rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .founder-signature {
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      color: var(--text-main);
+      border-top: 2px solid var(--primary);
+      padding-top: 1.5rem;
+      font-size: 1.2rem;
+      display: inline-block;
+      min-width: 300px;
+      margin-top: 1rem;
+    }
+
+    /* Founder Section Animations */
+    .founder-section.reveal-active .founder-tag {
+      animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 0.1s;
+    }
+
+    .founder-section.reveal-active .founder-name {
+      animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 0.2s;
+    }
+
+    .founder-section.reveal-active .founder-title {
+      animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 0.3s;
+    }
+
+    .founder-section.reveal-active .founder-bio p {
+      animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 0.4s;
+    }
+
+    .founder-section.reveal-active .founder-signature {
+      animation: revealUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes revealUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Initial state for staggered elements */
+    .founder-tag,
+    .founder-name,
+    .founder-title,
+    .founder-bio p,
+    .founder-signature {
+      opacity: 0;
+    }
+
+    /* Simple Who Attend Styles */
+    .who-attend {
+      text-align: center;
+      margin: 6rem 0;
+      padding: 4rem 2rem;
+      background: white;
+      border-radius: 2.5rem;
+      border: 1px solid var(--border);
+    }
+
+    .who-attend .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .attend-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      max-width: 900px;
+      margin: 0 auto 2rem;
+    }
+
+    .attend-pill {
+      background: hsla(265, 100%, 68%, 0.05);
+      color: var(--primary);
+      padding: 0.6rem 1.4rem;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 600;
+      border: 1px solid hsla(265, 100%, 68%, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .attend-pill:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .who-attend-footer {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    @media (max-width: 768px) {
+      .attend-pills {
+        gap: 0.5rem;
+      }
+
+      .attend-pill {
+        font-size: 0.9rem;
+        padding: 0.5rem 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- navbar -->
+    <div class="navbar">
+      <div class="logo"><img src="sharyxblack.png" alt="Sharyx Voice"></div>
+      <div class="nav-links">
+        <a href="#webinar">Webinar</a>
+        <a href="#testimonials">Clients</a>
+        <a href="#faq">FAQ</a>
+        <a href="#founder">Founder</a>
+        <a href="#" class="btn-outline-nav" id="navRegisterBtn">Register Slot</a>
+      </div>
+    </div>
+
+    <!-- Hero section with form and countdown -->
+    <div class="hero" id="webinar">
+      <div class="hero-content" data-reveal>
+        <div class="webinar-badge"> FREE LIVE WEBINAR · LIMITED SLOTS</div>
+        <h1>Join and learn how to scale <span>Your Sales Operations</span> By AI Voice Agent</h1>
+        <p>In 1 hour live webinar, you will explore real-world strategies to transform your sales & support — without
+          cold calling or extra headcount.</p>
+        <div style="margin-top: 2rem;">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.9rem; color: var(--text-muted);">
+            <span>✅ Live demo + Q&A</span>
+            <span>🎁 Bonus: AI voice playbook</span>
+            <span>⏳ 100% online</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Registration Form + countdown -->
+      <div class="hero-form-card" id="registerForm" data-reveal>
+        <div class="form-title">Reserve your seat</div>
+        <div class="form-sub">Limited spots — first come, first served</div>
+        <form id="webinarForm">
+          <div class="input-group">
+            <input type="text" id="fullName" placeholder="Full name *" required>
+          </div>
+          <div class="input-group">
+            <input type="tel" id="mobile" placeholder="Mobile number *" required>
+          </div>
+          <div class="input-group">
+            <input type="email" id="emailId" placeholder="Email id *" required>
+          </div>
+          <div class="input-group">
+            <select id="webinarSlot" required>
+              <option value="">Select preferred webinar date & time</option>
+              <option value="2025-04-25 14:00">Fri, Apr 25 · 2:00 PM EST</option>
+              <option value="2025-04-28 11:00">Mon, Apr 28 · 11:00 AM EST</option>
+              <option value="2025-05-02 16:00">Fri, May 2 · 4:00 PM EST</option>
+            </select>
+          </div>
+
+          <!-- Countdown to next session -->
+          <div class="countdown-box">
+            <div class="countdown-title">🔥 NEXT WEBINAR STARTS IN</div>
+            <div class="countdown-timer" id="countdownTimer">
+              <div class="time-block"><span class="time-number" id="days">00</span>
+                <div class="time-label">Days</div>
+              </div>
+              <div class="time-block"><span class="time-number" id="hours">00</span>
+                <div class="time-label">Hrs</div>
+              </div>
+              <div class="time-block"><span class="time-number" id="minutes">00</span>
+                <div class="time-label">Mins</div>
+              </div>
+              <div class="time-block"><span class="time-number" id="seconds">00</span>
+                <div class="time-label">Secs</div>
+              </div>
+            </div>
+            <div style="font-size: 0.7rem; margin-top: 8px;">*webinar date & time based on your selected slot</div>
+          </div>
+          <button type="submit" class="register-btn">⚡ Register Now – Free Access</button>
+        </form>
+        <div id="formSuccessMsg" style="margin-top: 12px; font-size: 0.8rem; text-align:center;"></div>
+      </div>
+    </div>
+
+    <!-- What You Will Explore (Agenda) -->
+    <div class="dual-col-section" data-reveal>
+      <div class="section-img-container">
+        <img src="webinar.png" alt="Webinar Session Preview">
+      </div>
+      <div class="section-content-side">
+        <h3 class="section-title gradient-heading" style="text-align: left; margin-bottom: 2.5rem;">
+          In this Live Webinar <br>
+          You will <span class="text-gradient">Explore</span>
+        </h3>
+        <div class="learn-grid-side">
+          <div class="learn-card-small">
+            <h3>Close More Sales</h3>
+            <p style="font-size: 0.9rem;">AI Voice Agents can handle objections and boost conversion rates.</p>
+          </div>
+          <div class="learn-card-small">
+            <h3>High-Intent Leads</h3>
+            <p style="font-size: 0.9rem;">Generate warm prospects using conversational AI — zero spam.</p>
+          </div>
+          <div class="learn-card-small">
+            <h3>Reduce Costs</h3>
+            <p style="font-size: 0.9rem;">Cut sales team costs by 40% while scaling outreach 24/7.</p>
+          </div>
+          <div class="learn-card-small">
+            <h3>24/7 Support</h3>
+            <p style="font-size: 0.9rem;">Deliver instant, human-like support across all timezones.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div id="testimonials" style="margin: 8rem 0; text-align: center;" data-reveal>
+      <h2 class="section-title">Trusted by forward-thinking teams</h2>
+      <div class="testimonial-scroller">
+        <div class="testimonial-track">
+          <!-- First Set -->
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“Our customer support efficiency improved dramatically. SharyX handles 80% of
+              queries automatically.”</div>
+            <div class="client-name">Vikram Rao</div>
+            <div class="client-title">Head of Operations, FreshMart Delivery</div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“SharyX transformed our lead management. We now handle 3x more inquiries with the
+              same team size.”</div>
+            <div class="client-name">Rajesh Sharma</div>
+            <div class="client-title">Director of Sales, Premium Properties Mumbai</div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“The Tamil and Hindi support is exceptional. Our patients feel comfortable speaking
+              in their native language.”</div>
+            <div class="client-name">Dr. Priya Venkatesh</div>
+            <div class="client-title">CEO, HealthFirst Clinics</div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“We now connect with Indian and Russian buyers instantly. Our conversion rate
+              increased by 40%.”</div>
+            <div class="client-name">Ahmed Al-Rashid</div>
+            <div class="client-title">CEO, Gulf Properties Dubai</div>
+          </div>
+
+          <!-- Cloned Set for Seamless Loop -->
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“Our customer support efficiency improved dramatically. SharyX handles 80% of
+              queries automatically.”</div>
+            <div class="client-name">Vikram Rao</div>
+            <div class="client-title">Head of Operations, FreshMart Delivery</div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“SharyX transformed our lead management. We now handle 3x more inquiries with the
+              same team size.”</div>
+            <div class="client-name">Rajesh Sharma</div>
+            <div class="client-title">Director of Sales, Premium Properties Mumbai</div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“The Tamil and Hindi support is exceptional. Our patients feel comfortable speaking
+              in their native language.”</div>
+            <div class="client-name">Dr. Priya Venkatesh</div>
+            <div class="client-title">CEO, HealthFirst Clinics</div>
+          </div>
+          <div class="testi-card">
+            <div class="stars">★★★★★</div>
+            <div class="testi-text">“We now connect with Indian and Russian buyers instantly. Our conversion rate
+              increased by 40%.”</div>
+            <div class="client-name">Ahmed Al-Rashid</div>
+            <div class="client-title">CEO, Gulf Properties Dubai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <h2 class="section-title" id="faq" data-reveal> Frequently Asked Questions</h2>
+    <div class="faq-container">
+      <div class="faq-glow"></div>
+      <div class="faq-item" data-reveal>
+        <div class="faq-question">Who Can attend this webinar? <span class="faq-icon">+</span></div>
+        <div class="faq-content">
+          <div class="faq-answer">This webinar is ideal for business owners, sales teams, SaaS founders, and customer
+            support teams who want to automate calls, generate high-quality leads, and improve conversions.</div>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <div class="faq-question">What will I learn about generating high-intent leads? <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          <div class="faq-answer">You will discover how AI voice agents interact with prospects, qualify them
+            effectively,
+            and identify high-intent leads without the need for traditional cold calling.</div>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <div class="faq-question">Will this webinar cover 24/7 customer support automation? <span
+            class="faq-icon">+</span></div>
+        <div class="faq-content">
+          <div class="faq-answer">Yes. We’ll show how AI voice agents can handle customer queries instantly, provide
+            round-the-clock support, and escalate complex issues when needed.</div>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <div class="faq-question">How will this webinar help me reduce sales costs? <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-content">
+          <div class="faq-answer">This webinar will explain how automating repetitive tasks like calls, follow-ups, and
+            basic support can reduce operational costs while improving overall efficiency and revenue.</div>
+        </div>
+      </div>
+      <div class="faq-item" data-reveal>
+        <div class="faq-question">Will this webinar explain whether AI replaces sales teams? <span
+            class="faq-icon">+</span></div>
+        <div class="faq-content">
+          <div class="faq-answer">Yes. We’ll clarify how AI voice agents are designed to support your sales team, not
+            replace them, by handling repetitive tasks so your team can focus on closing deals.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- About the Founder -->
+    <div style="margin: 8rem 0 4rem;" id="founder">
+      <div class="founder-section" data-reveal>
+        <div class="founder-content">
+          <span class="founder-tag">About the Founder</span>
+          <h2 class="founder-name">Sathish Kumar</h2>
+          <div class="founder-title">
+            <span>Specialist in Digital Transformation & AI Solutions</span>
+          </div>
+          <div class="founder-bio">
+            <p>With over 20 years of experience in the technology and intelligent automation space, <strong>Sathish
+                Kumar</strong> specializes in digital transformation and AI-powered solutions.</p>
+            <br>
+            <p>He builds AI Voice Agents that help organizations automate communication, streamline workflows, and scale
+              operational efficiency. His focus is on delivering practical, results-driven AI solutions that enable
+              smarter, faster, and more sustainable business growth.</p>
+          </div>
+          <div class="founder-signature">
+            "Delivering results-driven AI solutions for smarter business growth."
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Who can attend -->
+    <div class="who-attend" data-reveal>
+      <h3 class="section-title"> Who can attend this webinar?</h3>
+      <div class="attend-pills">
+        <span class="attend-pill">Sales Directors</span>
+        <span class="attend-pill">Founders & CEOs</span>
+        <span class="attend-pill">Revenue Ops Managers</span>
+        <span class="attend-pill">Customer Support Heads</span>
+        <span class="attend-pill">Marketing Leaders</span>
+        <span class="attend-pill">Tech Innovators</span>
+        <span class="attend-pill">Agency Owners</span>
+      </div>
+      <p class="who-attend-footer">Anyone eager to scale operations with AI voice agents — from startups to enterprises.
+      </p>
+    </div>
+
+    <footer>
+      <p><strong>Sharyx Voice Agent</strong> — Empowering sales teams with AI voice automation</p>
+      <div style="margin-top: 0.8rem;">© 2025 Sharyx · Live Webinar · All rights reserved</div>
+    </footer>
+  </div>
+
+  <script>
+    // ========================
+    // SERVER STORAGE FUNCTIONS
+    // ========================
+
+    // Helper: show floating toast
+    function showToast(message, bgColor = "#1e293b") {
+      const existingToast = document.querySelector('.toast-message');
+      if (existingToast) existingToast.remove();
+      const toast = document.createElement('div');
+      toast.className = 'toast-message';
+      toast.style.backgroundColor = bgColor;
+      toast.innerText = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    // countdown logic
+    let countdownInterval = null;
+
+    function getNextTargetDate(selectedSlotValue) {
+      if (!selectedSlotValue) {
+        let now = new Date();
+        let target = new Date();
+        target.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7) || 7);
+        target.setHours(14, 0, 0, 0);
+        if (target <= now) target.setDate(target.getDate() + 7);
+        return target;
+      }
+      let [datePart, hourPart] = selectedSlotValue.split(' ');
+      let [year, month, day] = datePart.split('-');
+      let [hour, minute] = hourPart.split(':');
+      let targetDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day), parseInt(hour), parseInt(minute), 0);
+      return targetDate;
+    }
+
+    function updateCountdownDisplay(targetDate) {
+      if (!targetDate) return;
+      const now = new Date();
+      const diff = targetDate - now;
+      if (diff <= 0) {
+        document.getElementById('days').innerText = '00';
+        document.getElementById('hours').innerText = '00';
+        document.getElementById('minutes').innerText = '00';
+        document.getElementById('seconds').innerText = '00';
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (86400000)) / (3600000));
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+      document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+      document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+      document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    function startCountdownForSlot(slotValue) {
+      if (countdownInterval) clearInterval(countdownInterval);
+      const target = getNextTargetDate(slotValue);
+      updateCountdownDisplay(target);
+      countdownInterval = setInterval(() => {
+        const freshTarget = getNextTargetDate(document.getElementById('webinarSlot').value);
+        updateCountdownDisplay(freshTarget);
+      }, 1000);
+    }
+
+    const slotSelect = document.getElementById('webinarSlot');
+    slotSelect.addEventListener('change', function (e) {
+      startCountdownForSlot(e.target.value);
+    });
+    startCountdownForSlot('');
+
+    // FAQ toggle
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', function () {
+        const parent = this.parentElement;
+        parent.classList.toggle('active');
+        // Let CSS handle everything – the text stays '+' but rotates 45deg to look like 'x' or similar, 
+        // or we can change text if needed. Rotating '+' results in a 'x' or similar cross.
+      });
+    });
+
+    // Form submission handler — POST details to server
+    const webinarForm = document.getElementById('webinarForm');
+    const successMsgDiv = document.getElementById('formSuccessMsg');
+
+    webinarForm.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      const name = document.getElementById('fullName').value.trim();
+      const mobile = document.getElementById('mobile').value.trim();
+      const email = document.getElementById('emailId').value.trim();
+      const slot = document.getElementById('webinarSlot').value;
+      const selectedSlotText = slotSelect.options[slotSelect.selectedIndex]?.text || slot;
+
+      if (!name || !mobile || !email || !slot) {
+        successMsgDiv.style.color = '#e11d48';
+        successMsgDiv.innerText = '❌ Please fill all fields and select a webinar slot.';
+        setTimeout(() => { successMsgDiv.innerText = ''; }, 3000);
+        return;
+      }
+      if (!email.includes('@')) {
+        successMsgDiv.style.color = '#e11d48';
+        successMsgDiv.innerText = '❌ Please enter a valid email address.';
+        setTimeout(() => { successMsgDiv.innerText = ''; }, 3000);
+        return;
+      }
+
+      // Create registration object
+      const registrationEntry = {
+        id: Date.now(),
+        fullName: name,
+        mobileNumber: mobile,
+        emailId: email,
+        webinarSlot: slot,
+        webinarSlotFormatted: selectedSlotText,
+        registeredAt: new Date().toISOString(),
+        webinarDate: slot.split(' ')[0]
+      };
+
+      try {
+        const response = await fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(registrationEntry)
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+          // Success UI
+          successMsgDiv.style.color = '#10b981';
+          successMsgDiv.innerHTML = `🎉 Thanks ${name}! Your seat is reserved for ${selectedSlotText}.`;
+
+          showToast(`📁 Registration saved to registrations.json (${result.count} total)`, "#8D5EFF");
+
+          webinarForm.reset();
+          slotSelect.value = "";
+          startCountdownForSlot('');
+        } else {
+          throw new Error(result.message || 'Failed to register.');
+        }
+      } catch (err) {
+        console.error('Registration error:', err);
+        successMsgDiv.style.color = '#e11d48';
+        successMsgDiv.innerText = '❌ Something went wrong. Please try again later.';
+      }
+
+      setTimeout(() => {
+        successMsgDiv.innerHTML = '';
+      }, 5000);
+    });
+
+    // ========================
+    // SCROLL REVEAL ANIMATION
+    // ========================
+    const revealCallback = (entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('reveal-active');
+          observer.unobserve(entry.target);
+        }
+      });
+    };
+
+    const revealObserver = new IntersectionObserver(revealCallback, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('[data-reveal]').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Staggered FAQ Entrance
+    document.querySelectorAll('.faq-container .faq-item').forEach((item, index) => {
+      item.style.setProperty('--reveal-delay', index);
+    });
+  </script>
+</body>
+
+</html>
