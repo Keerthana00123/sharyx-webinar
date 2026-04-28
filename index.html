@@ -26,6 +26,10 @@
       --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 5px 15px -8px rgba(0, 0, 0, 0.05);
     }
 
+    html {
+      font-size: 14px;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -39,6 +43,31 @@
       line-height: 1.6;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      font-size: 20px;
+    }
+
+    h1,
+    .hero h1,
+    .section-title,
+    .founder-name,
+    .text-gradient,
+    .gradient-heading {
+      font-size: 48px;
+    }
+
+    h2,
+    .hero h2 {
+      font-size: 32px;
+    }
+
+    h3,
+    .form-title,
+    .learn-card-small h3 {
+      font-size: 24px;
+    }
+
+    h4 {
+      font-size: 18px;
     }
 
     /* Professional Background Gradient Mesh */
@@ -78,7 +107,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.25rem 2rem;
+      padding: 0.35rem 1.25rem;
       position: sticky;
       top: 1rem;
       z-index: 1000;
@@ -93,7 +122,7 @@
     }
 
     .logo img {
-      height: 62px;
+      height: 32px;
       width: auto;
       transition: transform 0.3s ease;
     }
@@ -112,7 +141,7 @@
       text-decoration: none;
       font-weight: 500;
       color: var(--text-main);
-      font-size: 0.95rem;
+      font-size: 0.78rem;
       transition: color 0.3s;
     }
 
@@ -122,9 +151,10 @@
 
     .btn-outline-nav {
       border: 1.5px solid var(--accent);
-      padding: 0.6rem 1.4rem;
+      padding: 0.35rem 0.9rem;
       border-radius: 50px;
       color: var(--accent) !important;
+      font-size: 0.72rem;
       font-weight: 600;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -138,11 +168,11 @@
 
     /* Hero Section */
     .hero {
-      padding: 6rem 0 4rem;
+      padding: 2rem 0 2rem;
       display: flex;
       align-items: center;
       gap: 4rem;
-      min-height: 80vh;
+      min-height: calc(100vh - 100px);
     }
 
     .hero-content {
@@ -178,10 +208,10 @@
     }
 
     .hero h1 {
-      font-size: 4rem;
-      font-weight: 800;
+      font-size: 3rem;
+      font-weight: 700;
       line-height: 1.1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1rem;
       letter-spacing: -0.03em;
     }
 
@@ -193,9 +223,9 @@
     }
 
     .hero p {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.5rem;
       max-width: 540px;
     }
 
@@ -203,8 +233,8 @@
     .hero-form-card {
       flex: 0.85;
       background: white;
-      border-radius: 2.5rem;
-      padding: 2.5rem;
+      border-radius: 2rem;
+      padding: 1.5rem 2rem;
       border: 1px solid var(--border);
       box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.08);
       position: relative;
@@ -216,34 +246,34 @@
       inset: -1px;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       z-index: -1;
-      border-radius: 2.5rem;
+      border-radius: 2rem;
       opacity: 0.1;
     }
 
     .form-title {
-      font-size: 1.75rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .form-sub {
       color: var(--text-muted);
-      margin-bottom: 2rem;
-      font-size: 1rem;
+      margin-bottom: 1.25rem;
+      font-size: 0.78rem;
     }
 
     .input-group {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
     .input-group input,
     .input-group select {
       width: 100%;
-      padding: 1rem 1.25rem;
+      padding: 0.65rem 1rem;
       border-radius: 1rem;
       border: 1.5px solid var(--border);
       font-family: inherit;
-      font-size: 1rem;
+      font-size: 0.8rem;
       transition: all 0.3s;
       background: hsl(210, 40%, 99%);
     }
@@ -258,29 +288,45 @@
 
     .countdown-box {
       background: hsl(220, 33%, 98%);
-      padding: 1.25rem;
-      border-radius: 1.25rem;
-      margin: 1.5rem 0;
+      padding: 0.75rem;
+      border-radius: 1rem;
+      margin: 1rem 0;
       border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .countdown-title {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
     }
 
     .countdown-timer {
       display: flex;
       justify-content: center;
-      gap: 1rem;
-      margin-top: 0.75rem;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
     }
 
     .time-number {
-      font-size: 1.75rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: var(--text-main);
       background: white;
-      padding: 0.4rem 0.8rem;
+      padding: 0.3rem 0.6rem;
       border-radius: 0.75rem;
-      min-width: 60px;
+      min-width: 50px;
       display: inline-block;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .time-label {
+      font-size: 0.6rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 0.25rem;
     }
 
     .register-btn {
@@ -288,10 +334,10 @@
       background: var(--text-main);
       color: white;
       border: none;
-      padding: 1.1rem;
+      padding: 0.85rem;
       border-radius: 1rem;
       font-weight: 700;
-      font-size: 1.1rem;
+      font-size: 0.85rem;
       cursor: pointer;
       transition: all 0.3s;
     }
@@ -307,7 +353,7 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-      margin: 3rem 0;
+      margin: 2rem 0;
     }
 
     .learn-card {
@@ -340,7 +386,7 @@
       font-size: 3rem;
       font-weight: 800;
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 2rem;
       letter-spacing: -0.02em;
     }
 
@@ -380,7 +426,7 @@
     .faq-container {
       position: relative;
       max-width: 800px;
-      margin: 0 auto 6rem;
+      margin: 0 auto 3rem;
       z-index: 1;
     }
 
@@ -455,9 +501,11 @@
 
     /* Footer */
     footer {
-      padding: 6rem 0 3rem;
+      padding: 3rem 0 1rem;
       text-align: center;
       border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--text-muted);
     }
 
     @media (max-width: 1024px) {
@@ -467,10 +515,12 @@
         text-align: center;
         font-size: 2.8rem;
       }
+
       .section-img-container img {
         bottom: 0;
         right: 0;
       }
+
       .section-content-side {
         transform: translate(0, 0);
       }
@@ -484,18 +534,23 @@
         margin-top: 0.5rem;
         top: 0.5rem;
       }
+
       .nav-links {
-        display: none; /* Hide links on mobile for simplicity */
+        display: none;
+        /* Hide links on mobile for simplicity */
       }
+
       .logo img {
         height: 40px;
       }
+
       .hero {
         flex-direction: column;
         text-align: center;
         padding-top: 2rem;
         gap: 3rem;
       }
+
       .hero h1,
       .section-title,
       .founder-name,
@@ -505,32 +560,42 @@
         line-height: 1.3 !important;
         letter-spacing: -0.01em !important;
       }
+
       .text-gradient {
-        font-size: 1.7rem !important; /* Slightly larger for emphasis, but still balanced */
+        font-size: 1.7rem !important;
+        /* Slightly larger for emphasis, but still balanced */
       }
+
       .hero p {
         margin: 0 auto 2rem;
         font-size: 1.05rem;
       }
+
       .hero-form-card {
         padding: 1.5rem;
         width: 100%;
       }
+
       .learn-grid {
         grid-template-columns: 1fr;
       }
+
       .dual-col-section {
         flex-direction: column !important;
         text-align: center;
         margin: 2rem 0 4rem;
       }
+
       .dual-col-section .section-img-container {
-        display: none; /* Removed image on mobile as requested */
+        display: none;
+        /* Removed image on mobile as requested */
       }
+
       .dual-col-section .section-content-side {
         width: 100%;
         transform: none;
       }
+
       .dual-col-section .gradient-heading {
         right: 0;
         bottom: 0;
@@ -539,30 +604,37 @@
         font-size: 2.2rem;
         width: 100%;
       }
+
       .learn-grid-side {
         grid-template-columns: 1fr !important;
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
       }
+
       .learn-card-small {
         text-align: center;
       }
+
       .testi-card {
         min-width: 300px;
         max-width: 320px;
         padding: 1.5rem;
       }
+
       .founder-name {
         font-size: 2.5rem;
       }
+
       .founder-section {
         padding: 3rem 1.5rem;
         border-radius: 2rem;
       }
+
       .founder-bio {
         font-size: 1.1rem;
       }
+
       .founder-signature {
         min-width: auto;
         width: 100%;
@@ -573,16 +645,20 @@
       .hero h1 {
         font-size: 2rem;
       }
+
       .text-gradient {
         font-size: 2.5rem;
       }
+
       .gradient-heading {
         font-size: 2rem;
       }
+
       .time-number {
         font-size: 1.25rem;
         min-width: 45px;
       }
+
       .countdown-timer {
         gap: 0.5rem;
       }
@@ -594,11 +670,11 @@
       gap: 0;
       /* Gap removed as requested */
       align-items: center;
-      margin: 4rem 0 8rem;
+      margin: 2rem 0;
     }
 
     .gradient-heading {
-      font-size: 3.2rem;
+      font-size: 3rem;
       font-weight: 800;
       line-height: 1;
       letter-spacing: -0.04em;
@@ -608,7 +684,7 @@
     }
 
     .text-gradient {
-      font-size: 4rem;
+      font-size: 3rem;
       background: linear-gradient(135deg, var(--primary), var(--accent));
       -webkit-background-clip: text;
       background-clip: text;
@@ -631,17 +707,16 @@
       gap: 4rem;
       /* Gap removed as requested */
       align-items: center;
-      margin: 4rem 0 8rem;
+      margin: 2rem 0;
     }
 
     .section-img-container {
-      flex: 1.5;
-      /* Increased size for image */
+      flex: 0.9;
       position: relative;
     }
 
     .section-img-container img {
-      width: 100%;
+      width: 95%;
       height: auto;
       border-radius: 2.5rem;
       transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
@@ -649,7 +724,6 @@
       z-index: 2;
       bottom: 100px;
       right: 100px;
-      /* Adjust top and right to fine-tune the image position */
     }
 
     .section-img-container img:hover {
@@ -760,14 +834,13 @@
       color: var(--text-muted);
     }
 
-    /* Founder Section Styles (No Photo) */
     .founder-section {
       background: white;
       border-radius: 3rem;
       padding: 5rem 4rem;
       border: 1px solid var(--border);
       max-width: 1000px;
-      margin: 4rem auto 8rem;
+      margin: 2rem auto;
       position: relative;
       overflow: hidden;
       box-shadow: var(--shadow);
@@ -805,14 +878,14 @@
     }
 
     .founder-name {
-      font-size: 3.5rem;
+      font-size: 2rem;
       font-weight: 800;
       margin-bottom: 0.5rem;
       letter-spacing: -0.02em;
     }
 
     .founder-title {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       color: var(--accent);
       font-weight: 600;
       margin-bottom: 3rem;
@@ -823,10 +896,10 @@
     }
 
     .founder-bio {
-      font-size: 1.2rem;
+      font-size: 1rem;
       line-height: 1.8;
-      color: var(--text-muted);
-      margin-bottom: 3rem;
+      color: black;
+      margin-bottom: 1rem;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
@@ -837,8 +910,8 @@
       font-style: italic;
       color: var(--text-main);
       border-top: 2px solid var(--primary);
-      padding-top: 1.5rem;
-      font-size: 1.2rem;
+      padding-top: 1rem;
+      font-size: 1rem;
       display: inline-block;
       min-width: 300px;
       margin-top: 1rem;
@@ -894,7 +967,7 @@
     /* Simple Who Attend Styles */
     .who-attend {
       text-align: center;
-      margin: 6rem 0;
+      margin: 1rem 0;
       padding: 4rem 2rem;
       background: white;
       border-radius: 2.5rem;
@@ -902,8 +975,8 @@
     }
 
     .who-attend .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
     .attend-pills {
@@ -920,7 +993,7 @@
       color: var(--primary);
       padding: 0.6rem 1.4rem;
       border-radius: 100px;
-      font-size: 1rem;
+      font-size: 0.7rem;
       font-weight: 600;
       border: 1px solid hsla(265, 100%, 68%, 0.1);
       transition: all 0.3s ease;
@@ -1061,8 +1134,8 @@
     </div>
 
     <!-- Testimonials Section -->
-    <div id="testimonials" style="margin: 8rem 0; text-align: center;" data-reveal>
-      <h2 class="section-title">Trusted by forward-thinking teams</h2>
+    <div id="testimonials" style="margin: 2rem 0; text-align: center;" data-reveal>
+      <h2 class="section-title" style="font-size: 2.7rem;">Trusted by forward-thinking teams</h2>
       <div class="testimonial-scroller">
         <div class="testimonial-track">
           <!-- First Set -->
@@ -1129,7 +1202,7 @@
     </div>
 
     <!-- FAQ Section -->
-    <h2 class="section-title" id="faq" data-reveal> Frequently Asked Questions</h2>
+    <h2 class="section-title" id="faq" data-reveal style="font-size: 2.7rem;"> Frequently Asked Questions</h2>
     <div class="faq-container">
       <div class="faq-glow"></div>
       <div class="faq-item" data-reveal>
@@ -1214,8 +1287,9 @@
     </div>
 
     <footer>
-      <p><strong>Sharyx Voice Agent</strong> — Empowering sales teams with AI voice automation</p>
-      <div style="margin-top: 0.8rem;">© 2025 Sharyx · Live Webinar · All rights reserved</div>
+      <p style="font-size: 0.85rem;"><strong>Sharyx Voice Agent</strong> — Empowering sales teams with AI voice
+        automation</p>
+      <div style="margin-top: 0.5rem; font-size: 0.7rem;">© 2025 Sharyx · Live Webinar · All rights reserved</div>
     </footer>
   </div>
 
