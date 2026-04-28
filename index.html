@@ -510,10 +510,8 @@
 
     @media (max-width: 1024px) {
       .gradient-heading {
-        right: 0;
-        bottom: 0;
         text-align: center;
-        font-size: 2.8rem;
+        font-size: 2.2rem;
       }
 
       .section-img-container img {
@@ -556,14 +554,13 @@
       .founder-name,
       .gradient-heading,
       .who-attend .section-title {
-        font-size: 1.6rem !important;
+        font-size: 1.8rem !important;
         line-height: 1.3 !important;
         letter-spacing: -0.01em !important;
       }
 
       .text-gradient {
-        font-size: 1.7rem !important;
-        /* Slightly larger for emphasis, but still balanced */
+        font-size: 2rem !important;
       }
 
       .hero p {
@@ -580,18 +577,24 @@
         grid-template-columns: 1fr;
       }
 
-      .dual-col-section {
+      .dual-col-section,
+      .dual-col-section1 {
         flex-direction: column !important;
         text-align: center;
         margin: 2rem 0 4rem;
+        gap: 2rem;
       }
 
-      .dual-col-section .section-img-container {
-        display: none;
-        /* Removed image on mobile as requested */
+      .dual-col-section .section-img-container,
+      .dual-col-section1 .section-img-container {
+        display: block;
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
       }
 
-      .dual-col-section .section-content-side {
+      .dual-col-section .section-content-side,
+      .dual-col-section1 .section-content-side {
         width: 100%;
         transform: none;
       }
@@ -642,16 +645,25 @@
     }
 
     @media (max-width: 480px) {
-      .hero h1 {
-        font-size: 2rem;
+
+      .hero h1,
+      .section-title,
+      .gradient-heading {
+        font-size: 1.5rem !important;
       }
 
       .text-gradient {
-        font-size: 2.5rem;
+        font-size: 1.8rem !important;
       }
 
-      .gradient-heading {
-        font-size: 2rem;
+      .founder-signature {
+        min-width: auto;
+        width: 85%;
+        max-width: 280px;
+        margin: 1.5rem auto 0;
+        padding-top: 0.8rem;
+        font-size: 0.85rem;
+        display: block;
       }
 
       .time-number {
@@ -722,8 +734,8 @@
       transition: all 0.6s cubic-bezier(0.2, 1, 0.2, 1);
       position: relative;
       z-index: 2;
-      bottom: 100px;
-      right: 100px;
+      bottom: 20px;
+      right: 20px;
     }
 
     .section-img-container img:hover {
@@ -734,7 +746,7 @@
 
     .section-content-side {
       flex: 1;
-      transform: translate(-100px, -40px);
+      transform: translate(-20px, -10px);
       /* Adjusted top and left as requested */
       /* Narrower content area to balance larger image */
     }
