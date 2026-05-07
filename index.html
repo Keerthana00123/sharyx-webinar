@@ -26,14 +26,16 @@
       --shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.05), 0 5px 15px -8px rgba(0, 0, 0, 0.05);
     }
 
-    html {
-      font-size: 14px;
-    }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      width: 100%;
     }
 
     body {
@@ -41,7 +43,6 @@
       background: var(--bg);
       color: var(--text-main);
       line-height: 1.6;
-      overflow-x: hidden;
       scroll-behavior: smooth;
       font-size: 20px;
     }
@@ -429,6 +430,7 @@
       max-width: 800px;
       margin: 0 auto 3rem;
       z-index: 1;
+      overflow: hidden;
     }
 
     .faq-glow {
@@ -436,8 +438,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 150%;
-      height: 150%;
+      width: 100%;
+      max-width: 100vw;
+      height: 100%;
       background: radial-gradient(circle, hsla(265, 100%, 68%, 0.07) 0%, transparent 70%);
       z-index: -1;
       pointer-events: none;
@@ -507,175 +510,6 @@
       border-top: 1px solid var(--border);
       font-size: 0.85rem;
       color: var(--text-muted);
-    }
-
-    @media (max-width: 1024px) {
-      .gradient-heading {
-        text-align: center;
-        font-size: 2.2rem;
-      }
-
-      .section-img-container img {
-        bottom: 30px;
-        right: 0;
-      }
-
-      .section-content-side {
-        transform: translate(0, 0);
-      }
-    }
-
-    @media (max-width: 968px) {
-      .navbar {
-        padding: 1rem;
-        border-radius: 100px;
-        justify-content: center;
-        margin-top: 0.5rem;
-        top: 0.5rem;
-      }
-
-      .nav-links {
-        display: none;
-        /* Hide links on mobile for simplicity */
-      }
-
-      .logo img {
-        height: 40px;
-      }
-
-      .hero {
-        flex-direction: column;
-        text-align: center;
-        padding-top: 2rem;
-        gap: 3rem;
-      }
-
-      .hero-content {
-        margin-top: -1rem;
-      }
-
-      .hero h1,
-      .section-title,
-      .founder-name,
-      .gradient-heading,
-      .who-attend .section-title {
-        font-size: 1.8rem !important;
-        line-height: 1.3 !important;
-        letter-spacing: -0.01em !important;
-      }
-
-      .text-gradient {
-        font-size: 2rem !important;
-      }
-
-      .hero p {
-        margin: 0 auto 2rem;
-        font-size: 1.05rem;
-      }
-
-      .hero-form-card {
-        padding: 1.5rem;
-        width: 100%;
-      }
-
-      .learn-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .dual-col-section,
-      .dual-col-section1 {
-        flex-direction: column !important;
-        text-align: center;
-        margin: 2rem 0 4rem;
-        gap: 2rem;
-      }
-
-      .dual-col-section .section-img-container,
-      .dual-col-section1 .section-img-container {
-        display: none;
-      }
-
-      .dual-col-section .section-content-side,
-      .dual-col-section1 .section-content-side {
-        width: 100%;
-        transform: none;
-      }
-
-      .dual-col-section .gradient-heading {
-        right: 0;
-        bottom: 0;
-        text-align: center !important;
-        margin-bottom: 2rem !important;
-        font-size: 2.2rem;
-        width: 100%;
-      }
-
-      .learn-grid-side {
-        grid-template-columns: 1fr !important;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-      }
-
-      .learn-card-small {
-        text-align: center;
-      }
-
-      .testi-card {
-        min-width: 300px;
-        max-width: 320px;
-        padding: 1.5rem;
-      }
-
-      .founder-name {
-        font-size: 2.5rem;
-      }
-
-      .founder-section {
-        padding: 3rem 1.5rem;
-        border-radius: 2rem;
-      }
-
-      .founder-bio {
-        font-size: 1.1rem;
-      }
-
-      .founder-signature {
-        min-width: auto;
-        width: 100%;
-      }
-    }
-
-    @media (max-width: 480px) {
-
-      .hero h1,
-      .section-title,
-      .gradient-heading {
-        font-size: 1.5rem !important;
-      }
-
-      .text-gradient {
-        font-size: 1.8rem !important;
-      }
-
-      .founder-signature {
-        min-width: auto;
-        width: 85%;
-        max-width: 280px;
-        margin: 1.5rem auto 0;
-        padding-top: 0.8rem;
-        font-size: 0.85rem;
-        display: block;
-      }
-
-      .time-number {
-        font-size: 1.25rem;
-        min-width: 45px;
-      }
-
-      .countdown-timer {
-        gap: 0.5rem;
-      }
     }
 
     /* New Dual Column Utility */
@@ -1024,6 +858,143 @@
       font-size: 1.1rem;
     }
 
+    @media (max-width: 1024px) {
+      .gradient-heading {
+        text-align: center;
+        font-size: 2.2rem;
+      }
+
+      .section-img-container img {
+        bottom: 30px;
+        right: 0;
+      }
+
+      .section-content-side {
+        transform: translate(0, 0);
+      }
+    }
+
+    @media (max-width: 968px) {
+      .navbar {
+        padding: 1rem;
+        border-radius: 100px;
+        justify-content: center;
+        margin-top: 0.5rem;
+        top: 0.5rem;
+      }
+
+      .nav-links {
+        display: none;
+        /* Hide links on mobile for simplicity */
+      }
+
+      .logo img {
+        height: 40px;
+      }
+
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 2rem;
+        gap: 3rem;
+      }
+
+      .hero-content {
+        margin-top: -1rem;
+      }
+
+      .hero h1,
+      .section-title,
+      .founder-name,
+      .gradient-heading,
+      .who-attend .section-title {
+        font-size: 1.8rem !important;
+        line-height: 1.3 !important;
+        letter-spacing: -0.01em !important;
+      }
+
+      .text-gradient {
+        font-size: 2rem !important;
+      }
+
+      .hero p {
+        margin: 0 auto 2rem;
+        font-size: 1.05rem;
+      }
+
+      .hero-form-card {
+        padding: 1.5rem;
+        width: 100%;
+      }
+
+      .learn-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .dual-col-section,
+      .dual-col-section1 {
+        flex-direction: column !important;
+        text-align: center;
+        margin: 2rem 0 4rem;
+        gap: 2rem;
+      }
+
+      .dual-col-section .section-img-container,
+      .dual-col-section1 .section-img-container {
+        display: none;
+      }
+
+      .dual-col-section .section-content-side,
+      .dual-col-section1 .section-content-side {
+        width: 100%;
+        transform: none;
+      }
+
+      .dual-col-section .gradient-heading {
+        right: 0;
+        bottom: 0;
+        text-align: center !important;
+        margin-bottom: 2rem !important;
+        font-size: 2.2rem;
+        width: 100%;
+      }
+
+      .learn-grid-side {
+        grid-template-columns: 1fr !important;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .learn-card-small {
+        text-align: center;
+      }
+
+      .testi-card {
+        min-width: 260px;
+        max-width: 300px;
+        padding: 1.5rem;
+      }
+
+      .founder-name {
+        font-size: 2.5rem;
+      }
+
+      .founder-section {
+        padding: 3rem 1.5rem;
+        border-radius: 2rem;
+      }
+
+      .founder-bio {
+        font-size: 1.1rem;
+      }
+
+      .founder-signature {
+        min-width: auto;
+        width: 100%;
+      }
+    }
+
     @media (max-width: 768px) {
       .attend-pills {
         gap: 0.5rem;
@@ -1032,6 +1003,38 @@
       .attend-pill {
         font-size: 0.9rem;
         padding: 0.5rem 1.1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero h1,
+      .section-title,
+      .gradient-heading {
+        font-size: 1.5rem !important;
+      }
+
+      .text-gradient {
+        font-size: 1.8rem !important;
+      }
+
+      .founder-signature {
+        min-width: auto;
+        width: 85%;
+        max-width: 280px;
+        margin: 1.5rem auto 0;
+        padding-top: 0.8rem;
+        font-size: 0.85rem;
+        display: block;
+      }
+
+      .time-number {
+        font-size: 1.25rem;
+        min-width: 45px;
+      }
+
+      .countdown-timer {
+        gap: 0.5rem;
       }
     }
   </style>
@@ -1055,7 +1058,7 @@
     <!-- Hero section with form and countdown -->
     <div class="hero" id="webinar">
       <div class="hero-content" data-reveal>
-        <div class="webinar-badge"> FREE LIVE WEBINAR · LIMITED SLOTS</div>
+        <div class="webinar-badge"> FREE LIVE WEBINAR · MAY 23rd, 7PM IST</div>
         <h1>Join and learn how to scale <span>Your Sales Operations</span> By AI Voice Agent</h1>
         <p>In 1 hour live webinar, you will explore real-world strategies to transform your sales & support — without
           cold calling or extra headcount.</p>
@@ -1083,12 +1086,9 @@
             <input type="email" id="emailId" placeholder="Email id *" required>
           </div>
           <div class="input-group">
-            <select id="webinarSlot" required>
-              <option value="">Select preferred webinar date & time</option>
-              <option value="2025-04-25 14:00">Fri, Apr 25 · 2:00 PM EST</option>
-              <option value="2025-04-28 11:00">Mon, Apr 28 · 11:00 AM EST</option>
-              <option value="2025-05-02 16:00">Fri, May 2 · 4:00 PM EST</option>
-            </select>
+            <input type="text" value="May 23rd, 7:00 PM IST" readonly
+              style="cursor: default; background: white; border: 1.5px solid var(--border); color: black; font-weight: 700; text-align: center;">
+            <input type="hidden" id="webinarSlot" value="2026-05-23 19:00">
           </div>
 
           <!-- Countdown to next session -->
@@ -1303,7 +1303,7 @@
     <footer>
       <p style="font-size: 0.85rem;"><strong>Sharyx Voice Agent</strong> — Empowering sales teams with AI voice
         automation</p>
-      <div style="margin-top: 0.5rem; font-size: 0.7rem;">© 2025 Sharyx · Live Webinar · All rights reserved</div>
+      <div style="margin-top: 0.5rem; font-size: 0.7rem;">© 2026 Sharyx · Live Webinar · All rights reserved</div>
     </footer>
   </div>
 
@@ -1329,12 +1329,8 @@
 
     function getNextTargetDate(selectedSlotValue) {
       if (!selectedSlotValue) {
-        let now = new Date();
-        let target = new Date();
-        target.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7) || 7);
-        target.setHours(14, 0, 0, 0);
-        if (target <= now) target.setDate(target.getDate() + 7);
-        return target;
+        // Default to May 23, 2026 19:00 (7 PM) IST
+        return new Date(2026, 4, 23, 19, 0, 0);
       }
       let [datePart, hourPart] = selectedSlotValue.split(' ');
       let [year, month, day] = datePart.split('-');
@@ -1375,10 +1371,12 @@
     }
 
     const slotSelect = document.getElementById('webinarSlot');
-    slotSelect.addEventListener('change', function (e) {
-      startCountdownForSlot(e.target.value);
-    });
-    startCountdownForSlot('');
+    if (slotSelect.tagName === 'SELECT') {
+      slotSelect.addEventListener('change', function (e) {
+        startCountdownForSlot(e.target.value);
+      });
+    }
+    startCountdownForSlot('2026-05-23 19:00');
 
     // FAQ toggle
     document.querySelectorAll('.faq-question').forEach(q => {
@@ -1400,7 +1398,7 @@
       const mobile = document.getElementById('mobile').value.trim();
       const email = document.getElementById('emailId').value.trim();
       const slot = document.getElementById('webinarSlot').value;
-      const selectedSlotText = slotSelect.options[slotSelect.selectedIndex]?.text || slot;
+      const selectedSlotText = "May 23rd, 7:00 PM IST";
 
       if (!name || !mobile || !email || !slot) {
         successMsgDiv.style.color = '#e11d48';
@@ -1446,8 +1444,7 @@
           showToast(`🚀 Registration saved to MongoDB Atlas! (${result.count} total)`, "#8D5EFF");
 
           webinarForm.reset();
-          slotSelect.value = "";
-          startCountdownForSlot('');
+          startCountdownForSlot('2026-05-23 19:00');
         } else {
           throw new Error(result.message || 'Failed to register.');
         }
