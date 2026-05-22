@@ -1155,7 +1155,7 @@
             <input type="text" id="fullName" placeholder="Full name *" required>
           </div>
           <div class="input-group">
-            <input type="tel" id="mobile" placeholder="Mobile number *" required>
+            <input type="tel" id="mobile" placeholder="Whatsapp number *" required>
           </div>
           <div class="input-group">
             <input type="email" id="emailId" placeholder="Email id *" required>
@@ -1524,7 +1524,7 @@
         if (result.success) {
           // Success UI
           const successText = `Thanks ${name}! Your seat is reserved for ${selectedSlotText}.`;
-          
+
           // Show Modal
           document.getElementById('modalMessage').innerText = successText;
           document.getElementById('successModal').classList.add('active');

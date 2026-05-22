@@ -74,34 +74,80 @@ const sendConfirmationEmail = async (email, name, webinarDate, webinarSlot) => {
         to: email,
         subject: "🎉 Your Webinar Registration is Confirmed!",
         html: `
-            <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 8px; padding: 30px; color: #334155;">
-                <h2 style="color: #8D5EFF; margin-bottom: 20px;">Registration Confirmed!</h2>
-                <p>Hi <strong>${name}</strong>,</p>
-                <p>Thank you for registering for our upcoming webinar:</p>
-                <p style="font-size: 1.1rem; font-weight: 700; color: #1e293b; margin: 15px 0;"><i>How AI Voice Agents Help Businesses Generate Leads & Increase Sales</i></p>
-                
-                <p>We’re excited to have you join us. In this session, you’ll learn:</p>
-                <ul style="line-height: 1.8;">
-                    <li>How AI Voice Agents generate quality leads</li>
-                    <li>Reduce cold calling and manual follow-ups</li>
-                    <li>Increase revenue without hiring more staff</li>
-                    <li>Automate customer conversations and sales calls</li>
-                </ul>
-                
-                <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin: 25px 0; border: 1px solid #e2e8f0;">
-                    <p style="margin: 5px 0;">📅 <strong>Date:</strong> May 30th, 2026</p>
-                    <p style="margin: 5px 0;">⏰ <strong>Time:</strong> 11:00 AM IST</p>
-                    <p style="margin: 15px 0 5px;">📍 <strong>Join Google Meet:</strong> <a href="${process.env.GOOGLE_MEET_LINK || '#'}" style="color: #8D5EFF; text-decoration: none; font-weight: 600;">Click here to join</a></p>
+            <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px 30px; color: #1e293b; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);">
+                <!-- Header / Logo Area -->
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <h2 style="color: #8D5EFF; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">Sharyx</h2>
+                    <p style="margin: 5px 0 0 0; font-size: 12px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Elite Webinar Series</p>
                 </div>
                 
-                <p style="font-style: italic; font-size: 0.9rem; color: #64748b;">Please join a few minutes early to avoid any last-minute issues.</p>
+                <h3 style="color: #0f172a; font-size: 20px; font-weight: 700; margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">🎉 Registration Confirmed!</h3>
                 
-                <p style="margin-top: 30px;">Looking forward to seeing you at the webinar.</p>
+                <p style="font-size: 16px; line-height: 1.6; margin-bottom: 20px; color: #334155;">Hi <strong>${name}</strong>,</p>
                 
-                <p style="margin-bottom: 0;">Best Regards,<br><strong>Sharyx VoiceAI</strong></p>
+                <p style="font-size: 16px; line-height: 1.6; color: #334155; margin-bottom: 25px;">Just a quick reminder that our exclusive webinar is only <strong>3 days away!</strong></p>
                 
-                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 30px 0;" />
-                <p style="font-size: 11px; color: #94a3b8; text-align: center;">© 2026 Sharyx · Elite Webinar Series</p>
+                <!-- Webinar Details Card -->
+                <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); padding: 24px; border-radius: 12px; margin: 25px 0; border: 1px solid #e2e8f0;">
+                    <table border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+                        <tr>
+                            <td style="padding-bottom: 10px; font-size: 16px; color: #334155;">
+                                <span style="font-size: 20px; margin-right: 8px; vertical-align: middle;">📅</span> 
+                                <strong>Date:</strong> May 30, 2026
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-size: 16px; color: #334155;">
+                                <span style="font-size: 20px; margin-right: 8px; vertical-align: middle;">⏰</span> 
+                                <strong>Time:</strong> 11:00 AM IST
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <!-- Key Learnings Section -->
+                <p style="font-size: 16px; font-weight: 600; color: #0f172a; margin-top: 25px; margin-bottom: 15px;">In this session, you'll learn how to:</p>
+                <table border="0" cellpadding="0" cellspacing="0" style="width: 100%; margin-bottom: 25px;">
+                    <tr>
+                        <td style="width: 30px; vertical-align: top; padding-bottom: 12px; font-size: 18px;">✅</td>
+                        <td style="font-size: 15px; line-height: 1.5; color: #334155; padding-bottom: 12px; padding-left: 8px;">
+                            Generate quality leads using AI Voice Agents
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30px; vertical-align: top; padding-bottom: 12px; font-size: 18px;">✅</td>
+                        <td style="font-size: 15px; line-height: 1.5; color: #334155; padding-bottom: 12px; padding-left: 8px;">
+                            Reduce cold calling and manual follow-ups
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30px; vertical-align: top; padding-bottom: 12px; font-size: 18px;">✅</td>
+                        <td style="font-size: 15px; line-height: 1.5; color: #334155; padding-bottom: 12px; padding-left: 8px;">
+                            Increase revenue without hiring additional staff
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30px; vertical-align: top; padding-bottom: 12px; font-size: 18px;">✅</td>
+                        <td style="font-size: 15px; line-height: 1.5; color: #334155; padding-bottom: 12px; padding-left: 8px;">
+                            Automate customer conversations and sales calls
+                        </td>
+                    </tr>
+                </table>
+                
+                <!-- Notice and Sign-off -->
+                <p style="font-size: 15px; line-height: 1.6; color: #475569; background-color: #f0fdf4; border-left: 4px solid #22c55e; padding: 12px 16px; border-radius: 0 8px 8px 0; margin-bottom: 25px;">
+                    ℹ️ The Zoom Meet joining link will be shared shortly before the webinar.
+                </p>
+                
+                <p style="font-size: 16px; line-height: 1.6; color: #334155; margin-bottom: 30px;">We look forward to having you with us!</p>
+                
+                <p style="font-size: 15px; margin-bottom: 0; color: #64748b; line-height: 1.5;">
+                    Best Regards,<br>
+                    <strong style="color: #8D5EFF;">Sharyx Team</strong>
+                </p>
+                
+                <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 35px 0 25px 0;" />
+                <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 0;">© 2026 Sharyx · Elite Webinar Series</p>
             </div>
         `,
     };
