@@ -1133,7 +1133,7 @@
     <!-- Hero section with form and countdown -->
     <div class="hero" id="webinar">
       <div class="hero-content" data-reveal>
-        <div class="webinar-badge"> FREE LIVE WEBINAR · MAY 23rd, 7PM IST</div>
+        <div class="webinar-badge"> FREE LIVE WEBINAR · MAY 30th, 11AM IST</div>
         <h1>Join and learn how to scale <span>Your Sales Operations</span> By AI Voice Agent</h1>
         <p>In 1 hour live webinar, you will explore real-world strategies to transform your sales & support — without
           cold calling or extra headcount.</p>
@@ -1161,9 +1161,9 @@
             <input type="email" id="emailId" placeholder="Email id *" required>
           </div>
           <div class="input-group">
-            <input type="text" value="May 23rd, 7:00 PM IST" readonly
+            <input type="text" value="May 30th, 11:00 AM IST" readonly
               style="cursor: default; background: white; border: 1.5px solid var(--border); color: black; font-weight: 700; text-align: center;">
-            <input type="hidden" id="webinarSlot" value="2026-05-23 19:00">
+            <input type="hidden" id="webinarSlot" value="2026-05-30 11:00">
           </div>
 
           <!-- Countdown to next session -->
@@ -1414,8 +1414,8 @@
 
     function getNextTargetDate(selectedSlotValue) {
       if (!selectedSlotValue) {
-        // Default to May 23, 2026 19:00 (7 PM) IST
-        return new Date(2026, 4, 23, 19, 0, 0);
+        // Default to May 30, 2026 11:00 (11 AM) IST
+        return new Date(2026, 4, 30, 11, 0, 0);
       }
       let [datePart, hourPart] = selectedSlotValue.split(' ');
       let [year, month, day] = datePart.split('-');
@@ -1461,7 +1461,7 @@
         startCountdownForSlot(e.target.value);
       });
     }
-    startCountdownForSlot('2026-05-23 19:00');
+    startCountdownForSlot('2026-05-30 11:00');
 
     // FAQ toggle
     document.querySelectorAll('.faq-question').forEach(q => {
@@ -1483,7 +1483,7 @@
       const mobile = document.getElementById('mobile').value.trim();
       const email = document.getElementById('emailId').value.trim();
       const slot = document.getElementById('webinarSlot').value;
-      const selectedSlotText = "May 23rd, 7:00 PM IST";
+      const selectedSlotText = "May 30th, 11:00 AM IST";
 
       if (!name || !mobile || !email || !slot) {
         successMsgDiv.style.color = '#e11d48';
@@ -1541,7 +1541,7 @@
           showToast(`🚀 Registration saved to PostgreSQL! (${result.count} total)`, "#8D5EFF");
 
           webinarForm.reset();
-          startCountdownForSlot('2026-05-23 19:00');
+          startCountdownForSlot('2026-05-30 11:00');
         } else {
           throw new Error(result.message || 'Failed to register.');
         }

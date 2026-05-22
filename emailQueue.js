@@ -29,11 +29,11 @@ const getTemplate = (type, name) => {
     switch (type) {
         case '3-days':
             subject = "⏳ Only 3 days left! Sharyx Elite Webinar";
-            message = `<p>Hi <strong>${name}</strong>, just a quick reminder that our webinar is in 3 days!</p><p>Mark your calendar for May 23rd, 7:00 PM IST.</p>`;
+            message = `<p>Hi <strong>${name}</strong>, just a quick reminder that our webinar is in 3 days!</p><p>Mark your calendar for May 30th, 11:00 AM IST.</p>`;
             break;
         case '1-day':
             subject = "🚨 Tomorrow! Sharyx Elite Webinar is happening";
-            message = `<p>Hi <strong>${name}</strong>, we're just 24 hours away from the Sharyx Elite Webinar.</p><p>See you tomorrow at 7:00 PM IST!</p>`;
+            message = `<p>Hi <strong>${name}</strong>, we're just 24 hours away from the Sharyx Elite Webinar.</p><p>See you tomorrow at 11:00 AM IST!</p>`;
             break;
         case '2-hours':
             subject = "🔥 Starting in 2 hours! Sharyx Elite Webinar";
@@ -59,8 +59,8 @@ const getTemplate = (type, name) => {
                 </ul>
 
                 <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin: 25px 0; border: 1px solid #e2e8f0;">
-                    <p style="margin: 5px 0;">📅 <strong>Date:</strong> May 23rd, 2026</p>
-                    <p style="margin: 5px 0;">⏰ <strong>Time:</strong> 7:00 PM IST</p>
+                    <p style="margin: 5px 0;">📅 <strong>Date:</strong> May 30th, 2026</p>
+                    <p style="margin: 5px 0;">⏰ <strong>Time:</strong> 11:00 AM IST</p>
                     <p style="margin: 15px 0 5px;">📍 <strong>Join Google Meet:</strong> <a href="${process.env.GOOGLE_MEET_LINK || '#'}" style="color: #8D5EFF; text-decoration: none; font-weight: 600;">Click here to join</a></p>
                 </div>
                 

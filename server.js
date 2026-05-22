@@ -24,13 +24,13 @@ const pool = new Pool({
 
 // Helper: Schedule Reminders using Redis/Bull
 const scheduleReminders = async (email, name) => {
-    // Target Webinar Time: May 23rd, 2026, 7:00 PM IST
-    // IST is UTC+5:30. ISO format: 2026-05-23T19:00:00+05:30
+    // Target Webinar Time: May 30th, 2026, 11:00 AM IST
+    // IST is UTC+5:30. ISO format: 2026-05-30T11:00:00+05:30
     const now = Date.now();
     const reminders = [
-        { type: '3-days', time: new Date('2026-05-20T19:00:00+05:30').getTime() },
-        { type: '1-day', time: new Date('2026-05-22T19:00:00+05:30').getTime() },
-        { type: '2-hours', time: new Date('2026-05-23T17:00:00+05:30').getTime() }
+        { type: '3-days', time: new Date('2026-05-27T11:00:00+05:30').getTime() },
+        { type: '1-day', time: new Date('2026-05-29T11:00:00+05:30').getTime() },
+        { type: '2-hours', time: new Date('2026-05-30T09:00:00+05:30').getTime() }
     ];
 
     for (const reminder of reminders) {
@@ -89,8 +89,8 @@ const sendConfirmationEmail = async (email, name, webinarDate, webinarSlot) => {
                 </ul>
                 
                 <div style="background: #f8fafc; padding: 20px; border-radius: 12px; margin: 25px 0; border: 1px solid #e2e8f0;">
-                    <p style="margin: 5px 0;">📅 <strong>Date:</strong> May 23rd, 2026</p>
-                    <p style="margin: 5px 0;">⏰ <strong>Time:</strong> 7:00 PM IST</p>
+                    <p style="margin: 5px 0;">📅 <strong>Date:</strong> May 30th, 2026</p>
+                    <p style="margin: 5px 0;">⏰ <strong>Time:</strong> 11:00 AM IST</p>
                     <p style="margin: 15px 0 5px;">📍 <strong>Join Google Meet:</strong> <a href="${process.env.GOOGLE_MEET_LINK || '#'}" style="color: #8D5EFF; text-decoration: none; font-weight: 600;">Click here to join</a></p>
                 </div>
                 
@@ -147,6 +147,22 @@ app.use(express.static(__dirname));
 // Serve the landing page as the root
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+// Serve the admin page
+app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'admin.html'));
+});
+
+// API to fetch all registrations (for admin dashboard)
+app.get('/api/registrations', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM registrations ORDER BY registered_at DESC');
+        res.json({ success: true, data: result.rows });
+    } catch (err) {
+        console.error('Error fetching registrations:', err);
+        res.status(500).json({ success: false, message: 'Server error fetching data.' });
+    }
 });
 
 // Endpoint to handle form registration using PostgreSQL
