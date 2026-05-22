@@ -28,15 +28,15 @@ const getTemplate = (type, name) => {
 
     switch (type) {
         case '3-days':
-            subject = "⏳ Only 3 days left! Sharyx Elite Webinar";
+            subject = "⏳ Only 3 days left! Sharyx Webinar";
             message = `<p>Hi <strong>${name}</strong>, just a quick reminder that our webinar is in 3 days!</p><p>Mark your calendar for May 30th, 11:00 AM IST.</p>`;
             break;
         case '1-day':
-            subject = "🚨 Tomorrow! Sharyx Elite Webinar is happening";
+            subject = "🚨 Tomorrow! Sharyx Webinar is happening";
             message = `<p>Hi <strong>${name}</strong>, we're just 24 hours away from the Sharyx Elite Webinar.</p><p>See you tomorrow at 11:00 AM IST!</p>`;
             break;
         case '2-hours':
-            subject = "🔥 Starting in 2 hours! Sharyx Elite Webinar";
+            subject = "🔥 Starting in 2 hours! Sharyx Webinar";
             message = `<p>Hi <strong>${name}</strong>, get ready! We go live in just 2 hours.</p><p>Joining link will be sent 15 minutes before the start.</p>`;
             break;
     }

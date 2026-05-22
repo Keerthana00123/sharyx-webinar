@@ -78,7 +78,7 @@ const sendConfirmationEmail = async (email, name, webinarDate, webinarSlot) => {
                 <!-- Header / Logo Area -->
                 <div style="text-align: center; margin-bottom: 30px;">
                     <h2 style="color: #8D5EFF; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">Sharyx</h2>
-                    <p style="margin: 5px 0 0 0; font-size: 12px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Elite Webinar Series</p>
+                    <p style="margin: 5px 0 0 0; font-size: 12px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Webinar Series</p>
                 </div>
                 
                 <h3 style="color: #0f172a; font-size: 20px; font-weight: 700; margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">🎉 Registration Confirmed!</h3>
@@ -147,7 +147,7 @@ const sendConfirmationEmail = async (email, name, webinarDate, webinarSlot) => {
                 </p>
                 
                 <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 35px 0 25px 0;" />
-                <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 0;">© 2026 Sharyx · Elite Webinar Series</p>
+                <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 0;">© 2026 Sharyx · Webinar Series</p>
             </div>
         `,
     };
@@ -174,10 +174,11 @@ const initDb = async () => {
                 email_id TEXT NOT NULL,
                 webinar_slot TEXT,
                 webinar_slot_formatted TEXT,
-                registered_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                registered_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
                 webinar_date TEXT
             )
         `);
+
         console.log('PostgreSQL table "registrations" is ready');
     } catch (err) {
         console.error('PostgreSQL initialization error:', err);

@@ -216,7 +216,7 @@
                     <td><strong>${user.full_name}</strong></td>
                     <td>${user.email_id}</td>
                     <td>${user.mobile_number}</td>
-                    <td>${new Date(user.registered_at).toLocaleString()}</td>
+                    <td>${new Date(user.registered_at).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</td>
                     <td><span class="status-badge">Confirmed</span></td>
                 </tr>
             `).join('');
