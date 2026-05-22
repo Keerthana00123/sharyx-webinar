@@ -77,8 +77,7 @@ const sendConfirmationEmail = async (email, name, webinarDate, webinarSlot) => {
             <div style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px 30px; color: #1e293b; background-color: #ffffff; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);">
                 <!-- Header / Logo Area -->
                 <div style="text-align: center; margin-bottom: 30px;">
-                    <h2 style="color: #8D5EFF; margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px;">Sharyx</h2>
-                    <p style="margin: 5px 0 0 0; font-size: 12px; font-weight: 600; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">Webinar Series</p>
+                    <img src="cid:sharyxlogo" alt="Sharyx Logo" style="height: 46px; width: auto; max-width: 100%; display: block; margin: 0 auto;" />
                 </div>
                 
                 <h3 style="color: #0f172a; font-size: 20px; font-weight: 700; margin-top: 0; margin-bottom: 15px; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">🎉 Registration Confirmed!</h3>
@@ -150,6 +149,11 @@ const sendConfirmationEmail = async (email, name, webinarDate, webinarSlot) => {
                 <p style="font-size: 11px; color: #94a3b8; text-align: center; margin: 0;">© 2026 Sharyx · Webinar Series</p>
             </div>
         `,
+        attachments: [{
+            filename: 'sharyxblack.png',
+            path: path.join(__dirname, 'sharyxblack.png'),
+            cid: 'sharyxlogo'
+        }]
     };
 
     try {
